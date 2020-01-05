@@ -29,3 +29,13 @@ test('Longest Substring Without Repeating Characters 6', () => {
   const s = 'cdd';
   expect(lengthOfLongestSubstring(s)).toBe(2);
 });
+
+test('Longest Substring Without Repeating Characters 7', () => {
+  const s = 'abcdefbcbb';
+  expect(lengthOfLongestSubstring(s)).toBe(6);
+});
+
+test('Longest Substring Without Repeating Characters 8', () => {
+  const s = 'dvdf';
+  expect(lengthOfLongestSubstring(s)).toBe(3);
+});

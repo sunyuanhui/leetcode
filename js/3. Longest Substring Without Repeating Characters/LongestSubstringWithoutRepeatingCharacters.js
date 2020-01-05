@@ -3,19 +3,32 @@
  * @return {number}
  */
 var lengthOfLongestSubstring = function(s) {
-    let subLen = 0;
-    for (let i = 0; i < s.length; i++) {
-        let subStr = [s[i]];
-        for (let j = i + 1; j < s.length; j++) {
-            if (subStr.includes(s[j])) {
-                break;
-            }
-            subStr.push(s[j]);
-        }
+    let alphebet = new Set();
+    [...s].forEach((l) => alphebet.add(l));
 
-        if (subLen < subStr.length) {
-            subLen = subStr.length;
+    let subLen = 0;
+    let subStr = [];
+    let head = 0;
+    for (let i = 0; i < s.length;) {
+        let letter = s[i];
+        if (subStr.includes(letter)) {
+            if (subLen < subStr.length) {
+                subLen = subStr.length;
+                if (subLen === alphebet.size) {
+                    return subLen;
+                }
+            }
+            i = s.indexOf(letter, head) + 1;
+            head = i;
+            subStr = [];
+            continue;
         }
+        subStr.push(letter);
+        i++;
+    }
+
+    if (subStr.length !== 0 && subLen < subStr.length) {
+        subLen = subStr.length;
     }
 
     return subLen;
