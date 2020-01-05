@@ -18,8 +18,9 @@ var lengthOfLongestSubstring = function(s) {
                     return subLen;
                 }
             }
-            i = s.indexOf(letter, head) + 1;
-            head = i;
+
+            head = s.indexOf(letter, head) + 1;
+            i = head;
             subStr = [];
             continue;
         }
