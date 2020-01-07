@@ -28,8 +28,6 @@ var findMedianSortedArrays = function(nums1, nums2) {
     }
 
     if (odd) {
-        console.info(i1);
-        console.info(i2);
         let m1 = (i1 < nums1.length) ? nums1[i1] : nums2[i2 + 1];
         let m2 = (i2 < nums2.length) ? nums2[i2] : nums1[i1 + 1];
         if (m1 === undefined) {
