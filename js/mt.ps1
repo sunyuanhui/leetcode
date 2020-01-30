@@ -13,7 +13,7 @@ $jsTemplate = [IO.File]::ReadAllText(".\template.js")
 Set-Content -Encoding utf8 ".\$directory\$templatejs.js" $jsTemplate
 
 # 读取模板
-$testTemplate = [IO.File]::ReadAllText(".\template.test.js")
+$testTemplate = [IO.File]::ReadAllText(".\template.test")
 # 修改模板
 $testTemplate = $testTemplate.Replace("[TEMPLATEJS]", $templatejs)
 $testTemplate = $testTemplate.Replace("[TITLE]", $title)
