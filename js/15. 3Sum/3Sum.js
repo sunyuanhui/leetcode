@@ -29,32 +29,10 @@ var threeSum = function(nums) {
                 continue;
             }
 
-            let min = c;
-            let mid;
-            let max;
-            if (min < nums[i]) {
-                mid = nums[i];
-            } else {
-                mid = min;
-                min = nums[i];
-            }
-            if (mid < nums[j]) {
-                max = nums[j];
-            } else {
-                max = mid;
-                if (min < nums[j]) {
-                    mid = nums[j];
-                } else {
-                    mid = min;
-                    min = nums[j];
-                }
-            }
-
-            let r = [min, mid, max];
-            let str = min + '' + mid + '' + max;
-            if (!resultStrs.includes(str)) {
+            let r = [nums[i], nums[j], c].sort((a, b) => a - b);
+            if (!resultStrs.includes(r.toString())) {
                 result.push(r);
-                resultStrs.push(str);
+                resultStrs.push(r.toString());
             }
         }
     }
