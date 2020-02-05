@@ -6,7 +6,6 @@ var threeSum = function(nums) {
     nums = nums.sort((x, y) => x - y);
 
     let result = [];
-    let resultStrs = [];
     for (let i = 0; i < nums.length - 2; i++) {
         let a = nums[i];
         if (a > 0) {
@@ -25,10 +24,12 @@ var threeSum = function(nums) {
                 break;
             }
             if (a + b + c === 0) {
-                let r = [a, b, c].sort((x, y) => x - y);
-                if (!resultStrs.includes(r.toString())) {
-                    result.push(r);
-                    resultStrs.push(r.toString());
+                result.push([a, b, c]);
+                while (j < k && b === nums[j + 1]) {
+                    j++;
+                }
+                while (j < k && c === nums[k + 1]) {
+                    k--;
                 }
                 j++;
                 k--;
