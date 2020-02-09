@@ -1,22 +1,5 @@
-﻿const { removeNthFromEnd, ListNode } = require('./RemoveNthNodeFromEndofList');
-
-var ArrayToList = function(array) {
-  const l = new ListNode(array[0]);
-  let t = l;
-  for (let i = 1; i < array.length; i++) {
-    t.next = new ListNode(array[i]);
-    t = t.next;
-  }
-  return l;
-}
-var ListToArray = function(list) {
-  let a = []
-  while (list !== null) {
-    a.push(list.val);
-    list = list.next;
-  }
-  return a;
-}
+﻿const { removeNthFromEnd } = require('./RemoveNthNodeFromEndofList');
+const { ArrayToList, ListToArray } = require('../utils');
 
 test('remove nth node from end of list 1', () => {
   const l = ArrayToList([1, 2, 3, 4, 5]);

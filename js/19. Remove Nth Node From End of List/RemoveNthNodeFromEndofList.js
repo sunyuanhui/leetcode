@@ -28,8 +28,4 @@ var removeNthFromEnd = function(head, n) {
     array[pre].next = array[pre].next === null ? null : array[pre].next.next;
     return head;
 };
-function ListNode(val) {
-    this.val = val;
-    this.next = null;
-}
-module.exports = { removeNthFromEnd, ListNode };
+module.exports = { removeNthFromEnd };

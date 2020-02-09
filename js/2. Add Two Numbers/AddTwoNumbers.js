@@ -5,17 +5,12 @@
  *     this.next = null;
  * }
  */
-
- function ListNode(val) {
-     this.val = val;
-     this.next = null;
- }
-
 /**
  * @param {ListNode} l1
  * @param {ListNode} l2
  * @return {ListNode}
  */
+const { ListNode } = require('../utils');
 var addTwoNumbers = function(l1, l2) {
     let fl;
     let l = null;
@@ -48,4 +43,4 @@ var addTwoNumbers = function(l1, l2) {
     return fl;
 };
 
-module.exports = { ListNode, addTwoNumbers };
+module.exports = { addTwoNumbers };
