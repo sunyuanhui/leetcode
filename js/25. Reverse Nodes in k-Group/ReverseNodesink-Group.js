@@ -15,7 +15,7 @@ var reverseKGroup = function(head, k) {
     let tmp = head;
     let list = [];
     for (let i = 0; i < k; i++) {
-        if (!tmp || tmp.next === null) {
+        if (!tmp || (tmp.next === null && i !== k - 1)) {
             return head;
         }
         list.push(tmp);
@@ -32,6 +32,10 @@ var reverseKGroup = function(head, k) {
         } else {
             list[swap].next = next;
             list[swap - 1].next = list[i];
+        }
+
+        if (swap + 1 < list.length) {
+            list[swap + 1].next = list[swap];
         }
     }
 
