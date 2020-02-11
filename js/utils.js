@@ -5,6 +5,9 @@ function ListNode(val) {
 }
 
 function ArrayToList(array) {
+  if (array.length === 0) {
+    return null;
+  }
   const l = new ListNode(array[0]);
   let t = l;
   for (let i = 1; i < array.length; i++) {
