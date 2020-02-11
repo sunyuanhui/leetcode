@@ -11,19 +11,12 @@
  */
 const { ListNode } = require('../utils');
 var swapPairs = function(head) {
-    let dummy = new ListNode();
-    dummy.next = head;
-    
-    let pre = dummy;
-    let cur = head;
-    while (cur && cur.next) {
-        pre.next = cur.next;
-        cur.next = cur.next.next;
-        pre.next.next = cur;
-
-        pre = pre.next.next;
-        cur = cur.next;
+    if (!head || head.next === null) {
+        return head;
     }
-    return dummy.next;
+    let next = head.next;
+    head.next = swapPairs(head.next.next);
+    next.next = head;
+    return next;
 };
 module.exports = swapPairs;
